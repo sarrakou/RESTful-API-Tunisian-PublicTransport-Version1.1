@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=
+    , initial-scale=1.0">
+    <title> Thneyti Dashboard </title>
+    <link rel="shortcut icon" type="image/png" href="/images/logo.png"/>
+
+</head>
+<body style="
+background-image:linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ),  url('/images/bg1.jpg');
+height: 600px; 
+  background-position: center;
+  background-size: cover;
+  margin-left:0;
+  height:1000px;
+font-size: 17px; 
+font-family:-apple-system,system-ui,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;;">
+   <div style="
+   padding-top:2px;
+      padding-left:90px;
+      padding-right:1200px;
+      padding-bottom:80px; 
+      max-width: 1400px;
+      margin: auto; 
+      opacity: 0.8;
+      position: absolute;"> 
+      </div>
+  <a style="
+  opacity:0.8;
+  text-decoration: none;
+  position:absolute;
+   left:10px;
+   padding-bottom: 660px;
+   opacity:1;" href="dashboard"> <img src="/images/logo.png" style=" position:absolute;
+   top:2px;"width="100px" />
+   <nobr id="titre" style="color:rgb(212, 60, 106); 
+   font-size: 50px;
+   position:absolute;
+   top:0px;
+   opacity:1;
+   left:100px;"> Thneyti </nobr>
+   </a>
+   <a href="api">
+   <button style="
+   background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+   border: 0;
+   border-radius: 12px;
+   color: #FFFFFF;
+   cursor: pointer;
+   display: inline-block;
+   font-family: -apple-system,system-ui,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+   font-size: 16px;
+   padding:10px;
+ position:absolute; 
+ left:1180px; 
+ top:15px;
+ font-size:17px;
+ font-weight: bold;
+   font-weight: 500;
+   line-height: 2.5;
+   outline: transparent;
+   padding: 0 1rem;
+   text-align: center;
+   text-decoration: none;
+   transition: box-shadow .2s ease-in-out;
+   user-select: none;
+   -webkit-user-select: none;
+   touch-action: manipulation;
+   white-space: nowrap;
+   "> API </button> </a>
+
+   <a href="base">
+   <button style="
+   background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
+   border: 0;
+   border-radius: 12px;
+   color: #FFFFFF;
+   cursor: pointer;
+   display: inline-block;
+   font-family: -apple-system,system-ui,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+   font-size: 16px;
+   padding:10px;
+ position:absolute; 
+ left:1250px; 
+ top:15px;
+ font-size:17px;
+ font-weight: bold;
+   font-weight: 500;
+   line-height: 2.5;
+   outline: transparent;
+   padding: 0 1rem;
+   text-align: center;
+   text-decoration: none;
+   transition: box-shadow .2s ease-in-out;
+   user-select: none;
+   -webkit-user-select: none;
+   touch-action: manipulation;
+   white-space: nowrap;
+   "> Log out </button>
+
+
+   </a> 
+   <br> <br> <br> <br>
+   <div style="font-size:70px;font-weight: bold; text-align:center;color:antiquewhite"> Welcome <%= user %></div> <br> <br>
+    <p style="font-weight: bold;
+    padding-left:30px; color:antiquewhite; font-size:20px;text-align: center;"> What would you like to use ? </p>
+     <br> <br><br>
+    <ul style=" list-style-type: none;
+    padding:10px;
+    background-color: #ebbfc8;
+    opacity:0.8;
+    width:1309px;
+    padding-left: 30px;
+    margin-bottom: 0px;"> <br> <nobr style="font-weight: bold;"> All The API endpoints :</nobr> 
+    <br><br>
+        <li style="font-weight: bold; text-decoration: underline;"> GET requests : </li>
+        <br>
+        <form method="POST" action="/route/busses/departure_station/destination_station">
+            <label>Departure station </label> <br>
+            <input type="text" list="stations" name="departure" placeholder="Departure" size="30px" ><br><br> 
+    <datalist id="stations">
+        <option value="BAB ALIOUA">
+        <option value="STATION BARCELONE">
+        <option value="MÉDINA JEDIDA">
+        <option value="BARDO-ALLER">
+        <option value="CARTHAGE SALAMBO">
+      </datalist> 
+
+    
+    <label> Arrival Station </label>  <br>
+    <input type="text" list="stations" name="arrival" placeholder="Arrival" size="30px" ><br><br> 
+    <datalist id="stations">
+        <option value="CARTHAGE BYRSA">
+        <option value="SIDI BOU SAID">
+        <option value="LE KRAM">
+        <option value="CENTRE BEN AROUS">
+        <option value="OUED ELLIL">
+      </datalist> 
+        <button style=" cursor: pointer;
+        outline: none;
+        border: none;
+        background-color: #232423;
+        padding: 0.3em 1.2em;
+        border-radius: 30px;
+        font-size: 17px;
+        font-weight: 550;
+        color: #ffffff;
+        background-size: 100% 100%;
+        box-shadow: 0 0 0 4px #232423 inset;" type="submit" > GET /busses/departure/arrival </button>  </form><br>
+        <li> <nobr style="border: solid black;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 3px;
+        transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);"> </nobr> Get the <nobr style="font-weight: bold;">station name, number of the station,and line number </nobr> for the specific tunisian public bus <br> that you should take.(after specifying the departure and destination locations)</li>
+        <br> 
+        <form method="GET" action="/route/busses">
+        <button style=" cursor: pointer;
+        outline: none;
+        border: none;
+        background-color: #232423;
+        padding: 0.3em 1.2em;
+        border-radius: 30px;
+        font-size: 17px;
+        font-weight: 550;
+        color: #ffffff;
+        background-size: 100% 100%;
+        box-shadow: 0 0 0 4px #232423 inset;" type="submit"> GET /busses </button> </form> <br>
+        <li> <nobr style="border: solid black;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+            transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);"> </nobr> Get the <nobr style="font-weight: bold;">station name, number of the station,and line number </nobr> for <nobr style="font-weight: bold;">ALL</nobr> the tunisian public busses available. </li>
+        <br>
+        <form method="POST" action="/route/busses/:station_name">
+        <label> Station Name </label> <br>
+        <input type="text" list="stations" name="station1" placeholder="Station" size="30px" ><br><br> 
+    <datalist id="stations">
+        <option value="BAB ALIOUA">
+        <option value="STATION BARCELONE">
+        <option value="MÉDINA JEDIDA">
+        <option value="BARDO-ALLER">
+        <option value="CARTHAGE SALAMBO">
+      </datalist> 
+        <button style=" cursor: pointer;
+        outline: none;
+        border: none;
+        background-color: #232423;
+        padding: 0.3em 1.2em;
+        border-radius: 30px;
+        font-size: 17px;
+        font-weight: 550;
+        color: #ffffff;
+        background-size: 100% 100%;
+        box-shadow: 0 0 0 4px #232423 inset;" type="submit"> GET /busses/Station_name </button> </form> <br>
+        <li> <nobr style="border: solid black;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+            transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);"> </nobr> Get the <nobr style="font-weight: bold;">station name, number of the station,and line number </nobr> for a<nobr style="font-weight: bold;"> specific </nobr>tunisian public bus. </li>
+        <br>
+        <form method="GET" action="/route/authh">
+        <button style=" cursor: pointer;
+        outline: none;
+        border: none;
+        background-color: #232423;
+        padding: 0.3em 1.2em;
+        border-radius: 30px;
+        font-size: 17px;
+        font-weight: 550;
+        color: #ffffff;
+        background-size: 100% 100%;
+        box-shadow: 0 0 0 4px #232423 inset;" type="submit"> GET /auth </button> </form><br>
+        <li> <nobr style="border: solid black;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+            transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);"> </nobr> Generate a JWT token </li>
+        <br>
+        <li style="font-weight: bold; text-decoration: underline;"> POST requests : </li>
+        <br>
+        <br>
+        <form method="POST" action="/route/register">
+            <label>Username</label> <br>
+            <input type="name" name="username" size="30px" > <br>
+        
+            
+            <label> Password </label>  <br>
+            <input type="password" name="password" id="pw" size="30px" >  <br>
+        
+        </datalist> <br> 
+        <button style=" cursor: pointer;
+        outline: none;
+        border: none;
+        background-color: #232423;
+        padding: 0.3em 1.2em;
+        border-radius: 30px;
+        font-size: 17px;
+        font-weight: 550;
+        color: #ffffff;
+        background-size: 100% 100%;
+        box-shadow: 0 0 0 4px #232423 inset;" type="submit"> POST /register </button> </form><br>
+        <li> <nobr style="border: solid black;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+            transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);"> </nobr> Register in the API </li>
+        <br> 
+        <form method="POST" action="/route/busses">
+        <label>Name of the station </label> <br>
+            <input type="text" list="stationss" name="station_name" placeholder="Station" size="30px" ><br><br> 
+    <datalist id="stationss">
+        <option value="BAB ALIOUA">
+        <option value="STATION BARCELONE">
+        <option value="MÉDINA JEDIDA">
+        <option value="BARDO-ALLER">
+        <option value="CARTHAGE SALAMBO">
+      </datalist> 
+
+    
+    <label> Number of the Station </label>  <br>
+    <input name="station_number" placeholder="number" size="30px" ><br><br> 
+
+      <label> Name of the line </label>  <br>
+      <input type="text" list="stationns" name="line_number" placeholder="Line" size="30px" ><br><br> 
+      <datalist id="stationns">
+          <option value="19C">
+          <option value="23E">
+          <option value="23">
+          <option value="10C">
+          <option value="17 RETOUR">
+        </datalist> 
+        <button style=" cursor: pointer;
+        outline: none;
+        border: none;
+        background-color: #232423;
+        padding: 0.3em 1.2em;
+        border-radius: 30px;
+        font-size: 17px;
+        font-weight: 550;
+        color: #ffffff;
+        background-size: 100% 100%;
+        box-shadow: 0 0 0 4px #232423 inset;" type="submit"> POST /busses </button></form> <br>
+        <li> <nobr style="border: solid black;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+            transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);"> </nobr>  Post the<nobr style="font-weight: bold;"> station name, number of the station,and line number </nobr> for a specific tunisian public bus.</li>
+        <br>
+        <br> <li style="font-weight: bold; text-decoration: underline;"> PUT requests : </li> <br>
+        <br> 
+        <form method="POST" action="/route/update">
+            <label>Name of the station to update </label> <br>
+            <input type="text" list="stationss" name="stationnname" placeholder="Station" size="30px" ><br><br> 
+    <datalist id="stationss">
+        <option value="BAB ALIOUA">
+        <option value="STATION BARCELONE">
+        <option value="MÉDINA JEDIDA">
+        <option value="BARDO-ALLER">
+        <option value="CARTHAGE SALAMBO">
+      </datalist> 
+            <label> new number of the Station </label>  <br>
+            <input name="nbrst" placeholder="number" size="30px" ><br><br> 
+        
+              <label> new name of the line </label>  <br>
+              <input type="text" list="stationns" name="namelline" placeholder="Line" size="30px" ><br><br> 
+              <datalist id="stationns">
+                  <option value="19C">
+                  <option value="23E">
+                  <option value="23">
+                  <option value="10C">
+                  <option value="17 RETOUR">
+                </datalist> 
+        <button style=" cursor: pointer;
+        outline: none;
+        border: none;
+        background-color: #232423;
+        padding: 0.3em 1.2em;
+        border-radius: 30px;
+        font-size: 17px;
+        font-weight: 550;
+        color: #ffffff;
+        background-size: 100% 100%;
+        box-shadow: 0 0 0 4px #232423 inset;" type="submit"> PUT /busses/Station_name </button> </form><br>
+        <li> <nobr style="border: solid black;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+            transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);"> </nobr> Update the<nobr style="font-weight: bold;"> number of the station</nobr> or <nobr style="font-weight: bold;">line number </nobr> of a specific tunisian public bus.</li>
+        <br>
+        <br>
+        <li style="font-weight: bold; text-decoration: underline;"> DELETE requests : </li><br>
+        <br>
+        <form method="POST" action="/route/delete">
+            <label> Station Name </label> <br>
+            <input type="text" list="stations" name="deletename" placeholder="Station" size="30px" ><br><br> 
+        <datalist id="stations">
+            <option value="BAB ALIOUA">
+            <option value="STATION BARCELONE">
+            <option value="MÉDINA JEDIDA">
+            <option value="BARDO-ALLER">
+            <option value="CARTHAGE SALAMBO">
+          </datalist> 
+        <button style=" cursor: pointer;
+        outline: none;
+        border: none;
+        background-color: #2a2b2a;
+        padding: 0.3em 1.2em;
+        border-radius: 30px;
+        font-size: 17px;
+        font-weight: 550;
+        color: #ffffff;
+        background-size: 100% 100%;
+        box-shadow: 0 0 0 4px #232423 inset;" type="submit"> DELETE /busses/Station_name </button> </form> <br>
+        <li> <nobr style="border: solid black;
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+            transform: rotate(-45deg);
+      -webkit-transform: rotate(-45deg);"> </nobr> Delete a specific tunisian public bus from the database. </li>
+      <br>
+    </ul>
+
+    <footer class="footer" style="font-weight: bold;
+    position: absolute;
+    margin-bottom:0; 
+    background-color:black;
+    left:0px;
+    padding-left:470.5px;
+    padding-right:509px;
+    opacity:0.8;">
+                  <p style="color:lightgrey;
+                  font-size:18px;"> Project By Sarra Koussaier Junior IT/BA @TBS </p>
+
+          </footer>
+</body>
+</html>
